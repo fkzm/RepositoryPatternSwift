@@ -1,17 +1,14 @@
 //
-//  RepositorySampleiOSTests.swift
-//  RepositorySampleiOSTests
+//  UserDefaultTest.swift
+//  RepositorySampleiOS
 //
-//  Created by Ehsan Mashhadi on 8/20/17.
+//  Created by Ehsan Mashhadi on 8/28/17.
 //  Copyright © 2017 Nuesoft. All rights reserved.
 //
 
 import XCTest
-@testable import RepositorySampleiOS
 
-class RepositorySampleiOSTests: XCTestCase {
-    
-    
+class UserDefaultTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,9 +20,18 @@ class RepositorySampleiOSTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        var request =  Request()
-        request.take(take: 10)
+    func testUserDefaultReplacement() {
+        
+        UserDefaults.standard.set("Ehsan", forKey: "Ehsan")
+        var ehsan = UserDefaults.standard.value(forKey: "Ehsan") as? String
+        XCTAssertEqual(ehsan, "Ehsan")
+        
+        UserDefaults.standard.set("Fateme", forKey: "Ehsan")
+        ehsan = UserDefaults.standard.value(forKey: "Ehsan") as? String
+        XCTAssertEqual(ehsan, "Fateme")
+
+
+
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

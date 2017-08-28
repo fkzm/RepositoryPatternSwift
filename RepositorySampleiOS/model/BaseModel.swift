@@ -9,10 +9,29 @@
 import Foundation
 
 
-class BaseModel{
+class BaseModel : BaseCRUDProvider{
     
     
+    static var url : String?
+    
+    var adapter: IAdapter?
+    
+    //abstract
+    func getMetadata(){
+        assertionFailure("Method should override")
+    }
     
     
+    init(iadapter:IAdapter) {
+        self.adapter = iadapter
+    }
+    
+    init() {
+
+    }
+   
+    func save<T>(model: T) where T : BaseModel {
+//        self.adapter?.save(model: model)
+    }
     
 }

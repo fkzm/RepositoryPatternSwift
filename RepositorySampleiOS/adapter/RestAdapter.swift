@@ -9,17 +9,23 @@
 import Foundation
 
 
-class RestAdapter : BaseAdapter{
+class RestAdapter {
+
+    var baseUrl : String?
+    var tokenLocalStorageKey : String?
     
-    func create<T>(model: T) {
-        
-        
-        
+
+    init(baseUrl:String, tokenLocalStorageKey:String) {
+        self.baseUrl = baseUrl
+        self.tokenLocalStorageKey = tokenLocalStorageKey
     }
     
-    func getAll<T>(model: T) -> [T] {
-        
-        return []
+    
+    
+    
+    func getBaseUrl() -> String{
+        return self.baseUrl!
     }
+    
     
 }
