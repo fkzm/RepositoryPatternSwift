@@ -30,8 +30,6 @@ class UserDefaultTest: XCTestCase {
         ehsan = UserDefaults.standard.value(forKey: "Ehsan") as? String
         XCTAssertEqual(ehsan, "Fateme")
 
-
-
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

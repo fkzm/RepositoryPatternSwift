@@ -12,9 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var request = Request()
-     
-        // Do any additional setup after loading the view, typically from a nib.
+//        var restAdapter  = RestAdapter(baseUrl: "https://nc.carrene.com/apiv1/", tokenLocalStorageKey: "token")
+//        
+//        var credential = [String:Any] ()
+//        credential.updateValue("hamed@carrene.com", forKey: "email")
+//        credential.updateValue("123456", forKey: "password")
+//        
+//        restAdapter.login(credentials: credential).then { (Response) -> Void in
+//            let status = Response.getStatus()
+//
+//        }//        var request = Request()
+        
     }
 
     override func didReceiveMemoryWarning() {

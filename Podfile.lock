@@ -1,0 +1,29 @@
+PODS:
+  - JWTDecode (2.0.0)
+  - PromiseKit (4.4.0):
+    - PromiseKit/Foundation (= 4.4.0)
+    - PromiseKit/QuartzCore (= 4.4.0)
+    - PromiseKit/UIKit (= 4.4.0)
+  - PromiseKit/CorePromise (4.4.0)
+  - PromiseKit/Foundation (4.4.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.4.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.4.0):
+    - PromiseKit/CorePromise
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - JWTDecode
+  - PromiseKit (~> 4.4)
+  - PromiseKit/Foundation
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  JWTDecode: 178e47e5d28d3abcff778bacced8342858cd6cb5
+  PromiseKit: ecf5fe92275d57ee77c9ede858af47a162e9b97e
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: d2a7ce04c3be42614766b63dbe9f804a1969f857
+
+COCOAPODS: 1.3.1

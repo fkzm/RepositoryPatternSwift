@@ -9,28 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RepositorySampleiOS/webService/Request.swift"
-            timestampString = "525619201.963259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "Request"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "RepositorySampleiOSTests/RepositorySampleiOSTests.swift"
-            timestampString = "525602569.013053"
+            timestampString = "525688117.681992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "testExample()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RepositorySampleiOS/webService/Request.swift"
-            timestampString = "525619201.963259"
+            timestampString = "525681439.065732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "addQueryString(name:value:allowDuplicated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -63,8 +47,71 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "tearDown()"
+            landmarkName = "RepositorySampleiOSTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RepositorySampleiOSTests/UserDefaultTest.swift"
+            timestampString = "525681556.870932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testUserDefaultReplacement()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RepositorySampleiOSTests.UserDefaultTest.testUserDefaultReplacement () -&gt; ()"
+                  moduleName = "RepositorySampleiOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ehsan/Documents/workspaces/iOS/RepositorySampleiOS/RepositorySampleiOSTests/UserDefaultTest.swift"
+                  timestampString = "525711580.508922"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "2609">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RepositorySampleiOSTests.UserDefaultTest.(testUserDefaultReplacement () -&gt; ()).(implicit closure #3)"
+                  moduleName = "RepositorySampleiOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ehsan/Documents/workspaces/iOS/RepositorySampleiOS/RepositorySampleiOSTests/UserDefaultTest.swift"
+                  timestampString = "525711580.512514"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RepositorySampleiOSTests.UserDefaultTest.(testUserDefaultReplacement () -&gt; ()).(implicit closure #4)"
+                  moduleName = "RepositorySampleiOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ehsan/Documents/workspaces/iOS/RepositorySampleiOS/RepositorySampleiOSTests/UserDefaultTest.swift"
+                  timestampString = "525711580.51505"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,12 +7,13 @@
 //
 
 import Foundation
-
+import PromiseKit
 
 class RestAdapter {
 
     var baseUrl : String?
     var tokenLocalStorageKey : String?
+    public var authenticator:Authenticator?
     
 
     init(baseUrl:String, tokenLocalStorageKey:String) {
@@ -21,10 +22,23 @@ class RestAdapter {
     }
     
     
-    
+    func login(credentials:[String:Any]) -> Promise<Response>{
+        
+        let request = Request(restAdapter: self, resources: "sessions", verb: "post", payload: credentials, queryString: nil)
+        
+        return request.send()
+    }
     
     func getBaseUrl() -> String{
         return self.baseUrl!
+    }
+    
+    func getAuthenticator()->Authenticator{
+        if self.authenticator == nil {
+            self.authenticator = Authenticator()
+        }
+        return self.authenticator!
+        
     }
     
     

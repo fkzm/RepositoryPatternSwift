@@ -15,6 +15,8 @@ class Authenticator{
     static var tokenRequestHeaderKey = "Authorization"
     static var tokenLocalStorageKey = "token"
     static var tokenResponseHeaderKey = "X-New-JWT-Token"
+//    private var isAuthenticated:Bool?
+    private var member:Member?
     
     static var authenticator : Authenticator?
     
@@ -29,6 +31,9 @@ class Authenticator{
         Authenticator.tokenLocalStorageKey = tokenLocalStorageKey
 
     }
+    init(){
+        
+    }
     
     static func getAuthenticator() -> Authenticator{
         
@@ -42,7 +47,20 @@ class Authenticator{
     func setToken(token:String){
         self.token = token
         UserDefaults.standard.set(token, forKey: Authenticator.tokenLocalStorageKey)
+        createMember()
     }
+    
+    
+    func createMember()
+    {
+        let tokenMap = JwtTokenHelper.getTokenBody(token: token!)
+
+        let name = tokenMap["name"] as! String
+        let id = tokenMap["id"] as! Int
+        self.member = Member(name: name, id: id)
+        
+    }
+
     
     func getToken() -> String{
         let token = UserDefaults.standard.value(forKey: Authenticator.tokenLocalStorageKey) as! String
@@ -57,5 +75,7 @@ class Authenticator{
         request.addHeader(key: Authenticator.tokenRequestHeaderKey, value: "Bearer "+self.token!)
     }
     
-    
+    func isAuthenticated()->Bool{
+        return self.member != nil
+    }
 }

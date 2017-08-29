@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PromiseKit
 
 class Request{
     
@@ -25,7 +26,7 @@ class Request{
 //        url1.httpMethod = "METHOD"
     }
     
-    init(restAdapter:RestAdapter,resources:String = "",verb:String = "GET",payload:[String:Any]=[:], queryString:[URLQueryItem]=[],encoding:String) {
+    init(restAdapter:RestAdapter,resources:String = "",verb:String = "GET",payload:[String:Any]=[:], queryString:[URLQueryItem]?=[],encoding:String? = "json") {
         self.restAdapter = restAdapter
         self.resources = resources
         self.verb = verb
@@ -61,13 +62,16 @@ class Request{
         self.queryString?.append(URLQueryItem(name: name, value:stringValue))
     }
     
+    func addParameters(payload:[String:Any]) -> Request{
+        self.payload = payload
+        return self
+    }
+    
     //compose url
     
-    func send(){
+    func send() -> Promise<Response> {
         
-//        var requestBody:
-        
-        let url = URL(string: "https://nc.carrene.com")!
+        let url = URL(string: "https://nc.carrene.com/apiv1/sessions")!
         var urlRequst = URLRequest(url: url)
         urlRequst.httpMethod = self.verb?.uppercased()
         urlRequst.allHTTPHeaderFields = self.headers
@@ -90,13 +94,28 @@ class Request{
             }
           }
         
-        URLSession.shared.dataTask(with: urlRequst, completionHandler: {
-            (data, response, error) -> Void in
+        return Promise<Response> { fulfill, reject in
             
-//            let httpResponse = response as? HTTPURLResponse
+            let session = URLSession.shared
             
-            
-            
-            })
+            let dataTask = session.dataTask(with: urlRequst) { data, response, error in
+                
+                let urlResponse = response as! HTTPURLResponse
+                if let data = data{
+                    
+                    let response = Response(urlResponse: urlResponse, data: data)
+                    fulfill(response)
+                    
+                } else if let error = error {
+                    reject(error)
+                    
+                } else {
+                    let error = NSError(domain: "PromiseKitTutorial", code: 0,
+                                        userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
+                    reject(error)
+                }
+            }    
+            dataTask.resume()
         }
     }
+}
