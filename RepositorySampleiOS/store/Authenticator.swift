@@ -69,6 +69,7 @@ class Authenticator{
     
     func deleteToken(){
         UserDefaults.standard.removeObject(forKey: Authenticator.tokenLocalStorageKey)
+        self.member = nil
     }
     
     func addAuthenticationHeaders(request:Request){

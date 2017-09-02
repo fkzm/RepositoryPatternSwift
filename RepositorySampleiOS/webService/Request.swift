@@ -55,7 +55,6 @@ class Request{
     
     //filter
     
-    
     func addQueryString(name:String,value:Any,allowDuplicated:Bool = false){
         //Warning on optional value // Test Request
         let stringValue = String(describing: value)
@@ -105,6 +104,7 @@ class Request{
                     
                     let response = Response(urlResponse: urlResponse, data: data)
                     fulfill(response)
+
                     
                 } else if let error = error {
                     reject(error)

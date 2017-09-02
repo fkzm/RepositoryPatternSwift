@@ -24,9 +24,29 @@ class RestAdapter {
     
     func login(credentials:[String:Any]) -> Promise<Response>{
         
-        let request = Request(restAdapter: self, resources: "sessions", verb: "post", payload: credentials, queryString: nil)
+        let request = Request(restAdapter: self, resources: "sessions", verb: "post", payload: credentials, queryString: nil).send()
         
-        return request.send()
+        return Promise<Response> { fulfill, reject in
+            
+            request.then { (Response) -> Void in
+                
+                let status = Response.getStatus()
+                let token = Response.getField(name: "token") as! String
+                
+                self.getAuthenticator().setToken(token: token)
+                
+                fulfill(Response)
+                
+            }.catch(execute: { (Error) in
+               print(Error.localizedDescription)
+            })
+
+            
+        }
+    }
+    
+    func logOut(){
+        self.authenticator?.deleteToken()
     }
     
     func getBaseUrl() -> String{

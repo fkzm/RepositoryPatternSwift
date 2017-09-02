@@ -9,39 +9,42 @@
 import XCTest
 @testable import RepositorySampleiOS
 
+
 class AuthenticationTest: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    var restAdapter:RestAdapter!
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    override func setUp() {
+        
+        super.setUp()
+        self.restAdapter  = RestAdapter(baseUrl: "https://nc.carrene.com/apiv1/", tokenLocalStorageKey: "token")
     }
     
     func testExample() {
         
         let expectation = self.expectation(description: "GET  SUMMERY")
-        var restAdapter  = RestAdapter(baseUrl: "https://nc.carrene.com/apiv1/", tokenLocalStorageKey: "token")
         
         var credential = [String:Any] ()
         credential.updateValue("hamed@carrene.com", forKey: "email")
         credential.updateValue("123456", forKey: "password")
         
-        restAdapter.login(credentials: credential).then { (Response) -> Void in
+        self.restAdapter.login(credentials: credential).then { (Response) -> Void in
 
             expectation.fulfill()
             let token:String = Response.getField(name: "token") as! String
             XCTAssertNotNil(token)
-            XCTAssertTrue(restAdapter.getAuthenticator().isAuthenticated())
-        
+            XCTAssertTrue(self.restAdapter.getAuthenticator().isAuthenticated())
+            
             
         }
         waitForExpectations(timeout: 50, handler: nil)
 
-        
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        self.restAdapter.logOut()
+        XCTAssertFalse(self.restAdapter.getAuthenticator().isAuthenticated())
         
     }
     

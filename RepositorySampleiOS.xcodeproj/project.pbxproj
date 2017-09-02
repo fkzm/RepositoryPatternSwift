@@ -25,11 +25,11 @@
 		7C30802D1F54361300E1BE1F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30802C1F54361300E1BE1F /* Response.swift */; };
 		7C30802F1F544AF900E1BE1F /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C30802E1F544AF900E1BE1F /* Authenticator.swift */; };
 		7C3080311F544EEC00E1BE1F /* UserDefaultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3080301F544EEC00E1BE1F /* UserDefaultTest.swift */; };
-		7C3080331F55451100E1BE1F /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3080321F55451100E1BE1F /*  .swift */; };
 		7CC089FF1F555E2800523C08 /* Pods_RepositorySampleiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC089FE1F555E2800523C08 /* Pods_RepositorySampleiOS.framework */; };
 		7CC08A001F555E5100523C08 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC089FC1F555DE000523C08 /* PromiseKit.framework */; };
 		7CC08A061F55A09700523C08 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC08A051F55A09700523C08 /* Member.swift */; };
 		7CC08A0A1F55B39100523C08 /* JwtTokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC08A091F55B39100523C08 /* JwtTokenHelper.swift */; };
+		7CC08A0C1F56C03F00523C08 /* AuthenticationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC08A0B1F56C03F00523C08 /* AuthenticationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +66,12 @@
 		7C30802C1F54361300E1BE1F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = webService/Response.swift; sourceTree = "<group>"; };
 		7C30802E1F544AF900E1BE1F /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Authenticator.swift; path = store/Authenticator.swift; sourceTree = "<group>"; };
 		7C3080301F544EEC00E1BE1F /* UserDefaultTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultTest.swift; sourceTree = "<group>"; };
-		7C3080321F55451100E1BE1F /*  .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
 		7C413D52192C353C0B1F2EC4 /* Pods-RepositorySampleiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepositorySampleiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepositorySampleiOSTests/Pods-RepositorySampleiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CC089FC1F555DE000523C08 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/RepositorySampleiOS-fziuczfrnvzubwanqjekfcuzervi/Build/Products/Debug-iphonesimulator/PromiseKit/PromiseKit.framework"; sourceTree = "<group>"; };
 		7CC089FE1F555E2800523C08 /* Pods_RepositorySampleiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_RepositorySampleiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/RepositorySampleiOS-fziuczfrnvzubwanqjekfcuzervi/Build/Products/Debug-iphonesimulator/Pods_RepositorySampleiOS.framework"; sourceTree = "<group>"; };
 		7CC08A051F55A09700523C08 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Member.swift; path = model/Member.swift; sourceTree = "<group>"; };
 		7CC08A091F55B39100523C08 /* JwtTokenHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JwtTokenHelper.swift; path = mobile/utility/JwtTokenHelper.swift; sourceTree = "<group>"; };
+		7CC08A0B1F56C03F00523C08 /* AuthenticationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTest.swift; sourceTree = "<group>"; };
 		97E6F8BD02DEE2CAFD4ED6DE /* Pods_RepositorySampleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RepositorySampleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32FC2C4EF76972A483B2E75 /* Pods-RepositorySampleiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepositorySampleiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RepositorySampleiOS/Pods-RepositorySampleiOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,10 +150,10 @@
 		7C3080021F49774100E1BE1F /* RepositorySampleiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				7CC08A0B1F56C03F00523C08 /* AuthenticationTest.swift */,
 				7C3080031F49774100E1BE1F /* RepositorySampleiOSTests.swift */,
 				7C3080051F49774100E1BE1F /* Info.plist */,
 				7C3080301F544EEC00E1BE1F /* UserDefaultTest.swift */,
-				7C3080321F55451100E1BE1F /*  .swift */,
 			);
 			path = RepositorySampleiOSTests;
 			sourceTree = "<group>";
@@ -471,9 +471,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3080331F55451100E1BE1F /*  .swift in Sources */,
 				7C3080311F544EEC00E1BE1F /* UserDefaultTest.swift in Sources */,
 				7C3080041F49774100E1BE1F /* RepositorySampleiOSTests.swift in Sources */,
+				7CC08A0C1F56C03F00523C08 /* AuthenticationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
